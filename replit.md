@@ -7,7 +7,8 @@ Ten projekt jest prostą aplikacją webową demonstrującą użycie Fetch API do
 - ✅ Projekt zaimportowany do środowiska Replit
 - ✅ Serwer HTTP działa na porcie 5000
 - ✅ Dodano profesjonalne style CSS (Com2_2.1 - 28.10.2025)
-- ✅ Dodano szczegółowe logowanie do konsoli (28.10.2025)
+- ✅ Dodano szczegółowe logowanie do konsoli (Com2_2.2 - 28.10.2025)
+- ✅ Dodano wyskakujące okno "Loading" popup (Com2_2.3 - 28.10.2025)
 
 ## Funkcjonalności
 1. **Example** - Pobiera wszystkie posty i wyświetla jako JSON
@@ -34,6 +35,14 @@ Dodano szczegółowe logowanie dla wszystkich funkcji:
 - **CW2**: Status, szczegółowe dane pojedynczego postu (ID, tytuł, user ID, treść)
 - **CW3**: Dane wysyłane, status odpowiedzi, dane utworzonego postu, komunikat sukcesu
 - **Obsługa błędów**: console.error() dla wszystkich funkcji
+
+### Wyskakujące okno Loading (Modal)
+Dodano profesjonalny popup loading:
+- **HTML**: Modal z kontenerem i animowanym spinnerem
+- **CSS**: Animacje fadeIn/slideIn, backdrop blur, obracający się loader
+- **JavaScript**: Funkcje showLoading() i hideLoading() zintegrowane z wszystkimi requestami
+- Modal pokazuje się podczas każdego zapytania fetch i ukrywa po otrzymaniu odpowiedzi
+- Obsługa błędów również ukrywa modal
 
 ## Architektura projektu
 ```

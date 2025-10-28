@@ -4,9 +4,19 @@
   const cw2 = document.getElementById('cw2')
   const cw3 = document.getElementById('cw3')
   const answer = document.getElementById('answer')
+  const loadingModal = document.getElementById('loadingModal')
+
+  function showLoading() {
+    loadingModal.classList.add('show')
+  }
+
+  function hideLoading() {
+    loadingModal.classList.remove('show')
+  }
 
   example.addEventListener("click", function () {
     console.log('=== EXAMPLE: Pobieranie wszystkich postów ===');
+    showLoading();
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         console.log('Response status:', response.status);
@@ -16,9 +26,11 @@
         console.log('Liczba pobranych postów:', array.length);
         console.log('Wszystkie posty:', array);
         answer.innerHTML = JSON.stringify(array);
+        hideLoading();
       })
       .catch(error => {
         console.error('Błąd:', error);
+        hideLoading();
       })
   })
 
@@ -26,7 +38,7 @@
     //TODO Com2_1.1 - Pobrać wszystkie posty i wyświetlić je w formie listy HTML
     //TODO Com2_1.2 - Dodać tekst "Loading..." podczas ładowania
     console.log('=== CW1: Lista wszystkich postów ===');
-    answer.innerHTML = '<p>Loading…</p>'
+    showLoading();
     
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
@@ -49,17 +61,19 @@
         html += '</ul>'
         answer.innerHTML = html
         console.log('✓ Lista postów wyświetlona pomyślnie');
+        hideLoading();
       })
       .catch(error => {
         console.error('Błąd:', error);
         answer.innerHTML = `<p style="color: red;">Błąd: ${error.message}</p>`
+        hideLoading();
       })
   })
 
   cw2.addEventListener("click", function () {
     //TODO Com2_1.3 - Pobrać pojedynczy post metodą GET i wyświetlić
     console.log('=== CW2: Pobieranie pojedynczego postu ===');
-    answer.innerHTML = '<p>Loading…</p>'
+    showLoading();
     
     fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then(response => {
@@ -85,10 +99,12 @@
         html += '</div>'
         answer.innerHTML = html
         console.log('✓ Post wyświetlony pomyślnie');
+        hideLoading();
       })
       .catch(error => {
         console.error('Błąd:', error);
         answer.innerHTML = `<p style="color: red;">Błąd: ${error.message}</p>`
+        hideLoading();
       })
   })
 
@@ -101,7 +117,7 @@
       userId: 1,
     };
     console.log('Dane wysyłane:', newPostData);
-    answer.innerHTML = '<p>Processing…</p>'
+    showLoading();
     
     fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
@@ -133,10 +149,12 @@
         html += '</div>'
         answer.innerHTML = html
         console.log('✓ Post utworzony i wyświetlony pomyślnie');
+        hideLoading();
       })
       .catch(error => {
         console.error('Błąd:', error);
         answer.innerHTML = `<p style="color: red;">Błąd: ${error.message}</p>`
+        hideLoading();
       })
   })
 
