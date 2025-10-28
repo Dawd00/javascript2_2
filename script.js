@@ -9,11 +9,7 @@
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(array => {
-        console.group('📋 Wszystkie posty (Example)');
-        console.log('Liczba postów:', array.length);
-        console.table(array);
-        console.log('Pełne dane JSON:', array);
-        console.groupEnd();
+        console.log(array)
         answer.innerHTML = JSON.stringify(array);
       })
   })
@@ -26,15 +22,7 @@
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(posts => {
-        console.group('📝 Lista wszystkich postów (CW1)');
-        console.log('Liczba pobranych postów:', posts.length);
-        console.table(posts, ['id', 'userId', 'title']);
-        console.log('Wybrane posty (pierwsze 5):');
-        posts.slice(0, 5).forEach(post => {
-          console.log(`Post ${post.id}: ${post.title}`);
-        });
-        console.log('Pełne dane:', posts);
-        console.groupEnd();
+        console.log(posts)
         return new Promise(resolve => {
           setTimeout(() => resolve(posts), 500)
         })
@@ -48,7 +36,6 @@
         answer.innerHTML = html
       })
       .catch(error => {
-        console.error('❌ Błąd podczas pobierania postów:', error);
         answer.innerHTML = `<p style="color: red;">Błąd: ${error.message}</p>`
       })
   })
@@ -60,15 +47,7 @@
     fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then(response => response.json())
       .then(post => {
-        console.group('📄 Pojedynczy post (CW2)');
-        console.log('Szczegóły postu:');
-        console.table([post]);
-        console.log('ID:', post.id);
-        console.log('User ID:', post.userId);
-        console.log('Tytuł:', post.title);
-        console.log('Treść:', post.body);
-        console.log('Pełny obiekt:', post);
-        console.groupEnd();
+        console.log(post)
         return new Promise(resolve => {
           setTimeout(() => resolve(post), 500)
         })
@@ -83,7 +62,6 @@
         answer.innerHTML = html
       })
       .catch(error => {
-        console.error('❌ Błąd podczas pobierania postu:', error);
         answer.innerHTML = `<p style="color: red;">Błąd: ${error.message}</p>`
       })
   })
@@ -92,31 +70,20 @@
     //TODO Com2_1.4 - Utworzyć nowy post metodą POST
     answer.innerHTML = '<p>Processing…</p>'
     
-    const newPostData = {
-      title: 'Nowy post utworzony przez użytkownika',
-      body: 'To jest treść nowego postu dodanego przez formularz.',
-      userId: 1,
-    };
-    
-    console.group('✨ Tworzenie nowego postu (CW3)');
-    console.log('Dane wysyłane do API:');
-    console.table([newPostData]);
-    console.log('JSON:', JSON.stringify(newPostData, null, 2));
-    
     fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
-      body: JSON.stringify(newPostData),
+      body: JSON.stringify({
+        title: 'Nowy post utworzony przez użytkownika',
+        body: 'To jest treść nowego postu dodanego przez formularz.',
+        userId: 1,
+      }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
       .then(response => response.json())
       .then(newPost => {
-        console.log('✅ Post został utworzony:');
-        console.table([newPost]);
-        console.log('Nowe ID postu:', newPost.id);
-        console.log('Pełna odpowiedź:', newPost);
-        console.groupEnd();
+        console.log(newPost)
         return new Promise(resolve => {
           setTimeout(() => resolve(newPost), 500)
         })
@@ -131,8 +98,6 @@
         answer.innerHTML = html
       })
       .catch(error => {
-        console.error('❌ Błąd podczas tworzenia postu:', error);
-        console.groupEnd();
         answer.innerHTML = `<p style="color: red;">Błąd: ${error.message}</p>`
       })
   })
