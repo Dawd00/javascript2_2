@@ -7,6 +7,7 @@ Ten projekt jest prostą aplikacją webową demonstrującą użycie Fetch API do
 - ✅ Projekt zaimportowany do środowiska Replit
 - ✅ Serwer HTTP działa na porcie 5000
 - ✅ Dodano profesjonalne style CSS (Com2_2.1 - 28.10.2025)
+- ✅ Dodano zaawansowane logowanie w konsoli (Com2_2.2 - 28.10.2025)
 
 ## Funkcjonalności
 1. **Example** - Pobiera wszystkie posty i wyświetla jako JSON
@@ -15,6 +16,8 @@ Ten projekt jest prostą aplikacją webową demonstrującą użycie Fetch API do
 4. **cw3** - Tworzy nowy post metodą POST
 
 ## Ostatnie zmiany (28.10.2025)
+
+### Com2_2.1 - Style CSS
 - Dodano link do `style.css` w pliku HTML
 - Utworzono kompletny plik stylów z:
   - Gradientowym tłem (fioletowe odcienie)
@@ -23,6 +26,17 @@ Ten projekt jest prostą aplikacją webową demonstrującą użycie Fetch API do
   - Animacjami i przejściami
   - Responsywnymi stylami dla list i divów
   - Niestandardowym paskiem przewijania
+
+### Com2_2.2 - Logowanie w konsoli
+- Dodano zaawansowane logowanie danych w konsoli przeglądarki:
+  - **Example**: Grupowane logi z emoji, liczba postów, console.table
+  - **CW1**: Tabela z wybranymi kolumnami, wyświetlanie pierwszych 5 postów
+  - **CW2**: Szczegółowe informacje o pojedynczym poście
+  - **CW3**: Logowanie danych przed i po utworzeniu postu
+  - Użycie console.group() dla organizacji logów
+  - Użycie console.table() dla tabelarycznego widoku
+  - Kolorowe emoji dla łatwiejszej identyfikacji
+  - Obsługa błędów z console.error()
 
 ## Architektura projektu
 ```
