@@ -1,40 +1,45 @@
-# API Fetch Demo Project
+# Projekt Fetch API - Aplikacja demonstracyjna
 
-## Overview
-A simple static website demonstrating how to fetch data from an external API using JavaScript. The project uses the JSONPlaceholder API to demonstrate GET and POST requests.
+## Przegląd
+Ten projekt jest prostą aplikacją webową demonstrującą użycie Fetch API do komunikacji z JSONPlaceholder API. Aplikacja pozwala na pobieranie i wyświetlanie postów oraz tworzenie nowych postów.
 
-## Project Type
-Static HTML/CSS/JavaScript website
+## Stan aktualny
+- ✅ Projekt zaimportowany do środowiska Replit
+- ✅ Serwer HTTP działa na porcie 5000
+- ✅ Dodano profesjonalne style CSS (Com2_2.1 - 28.10.2025)
 
-## Current State
-The project is fully functional and running on port 5000 with a Python HTTP server.
+## Funkcjonalności
+1. **Example** - Pobiera wszystkie posty i wyświetla jako JSON
+2. **cw1** - Pobiera wszystkie posty i wyświetla jako sformatowaną listę HTML z efektem ładowania
+3. **cw2** - Pobiera pojedynczy post (ID: 1) i wyświetla szczegóły
+4. **cw3** - Tworzy nowy post metodą POST
 
-## Files
-- `index.html` - Main HTML page with four buttons to trigger different API calls
-- `script.js` - JavaScript code handling API requests with fetch()
-- `style.css` - Basic styling for the page
+## Ostatnie zmiany (28.10.2025)
+- Dodano link do `style.css` w pliku HTML
+- Utworzono kompletny plik stylów z:
+  - Gradientowym tłem (fioletowe odcienie)
+  - Stylowanymi przyciskami z efektami hover
+  - Ładnym kontenerem dla wyświetlanych danych
+  - Animacjami i przejściami
+  - Responsywnymi stylami dla list i divów
+  - Niestandardowym paskiem przewijania
 
-## Features
-The site includes four interactive buttons:
-1. **example** - Fetches all posts and displays raw JSON
-2. **cw1** - Fetches all posts and displays them as a formatted HTML list with loading indicator
-3. **cw2** - Fetches a single post (ID: 1) and displays it with formatting
-4. **cw3** - Creates a new post via POST request and displays the response
+## Architektura projektu
+```
+├── index.html       # Główna strona HTML z przyciskami
+├── script.js        # Logika Fetch API i obsługa zdarzeń
+├── style.css        # Style CSS dla całej aplikacji
+└── replit.md        # Dokumentacja projektu
+```
 
-## API Used
-JSONPlaceholder (https://jsonplaceholder.typicode.com/) - A free fake API for testing and prototyping
+## Technologie
+- HTML5
+- CSS3 (z gradientami i animacjami)
+- Vanilla JavaScript
+- Fetch API
+- JSONPlaceholder API (testowe dane)
 
-## Server Configuration
-- Server Type: Python HTTP server
+## Serwer
+- Typ: Python HTTP Server
 - Port: 5000
-- Command: `python -m http.server 5000`
-
-## Recent Changes
-- October 28, 2025: Project imported into Replit environment
-- Server successfully started and verified working
-
-## User Preferences
-None specified yet
-
-## Project Architecture
-Simple static website with no build process or dependencies. All functionality is implemented in vanilla JavaScript with no external libraries.
+- Komenda: `python3 -m http.server 5000`
